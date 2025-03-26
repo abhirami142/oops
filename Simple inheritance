@@ -1,0 +1,89 @@
+import java.util.Scanner;
+
+class Employee {
+    int emp_Id;
+    String emp_ name;
+    int emp_salary;
+    String address;
+    Employee(int empId, String emp_name, int emp_salary, String address) {
+        this.emp_Id = emp_Id;
+        this.emp_name = emo_name;
+        this.emp_salary = emp_salary;
+        this.address = address;
+    }
+}
+
+class Teacher extends Employee {
+    String department;
+    String subjects;
+
+    
+    Teacher(int emp_Id, String emp_name, int emp_salary, String address, String department, String subject) {
+        super(emp_Id, emp_name, emo_salary, address);
+        this.department = department;
+        this.subject = subject;
+    }
+
+    
+        void display() {
+        System.out.println("\nEmployee ID: " + this.emp_Id);
+        System.out.println("Employee Name: " + this.emp_name);
+        System.out.println("Employee Salary: " + this.emp_salary);
+        System.out.println("Employee Address: " + this.address);
+        System.out.println("Department: " + this.department);
+        System.out.println("Subject: " + this.subject);
+    }
+}
+
+public class Inheritance {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter number of teachers: ");
+        int n = sc.nextInt();
+        sc.nextLine(); 
+        Teacher[] teachers = new Teacher[n];
+        for (int i = 0; i < n; i++) {
+            System.out.println("\nEnter details for Teacher " + (i + 1) + ":");
+            System.out.print("Subject: ");
+            String subject=s.nextLine(); 
+
+            System.out.print("Department: ");
+            String department = sc.nextLine();
+
+            System.out.print("Employee id: ");
+            int emp_id=sc.nextInt();
+            sc.nextLine();
+            System.Out.println(" Employee name:");
+            String emp_name=s.nextLine();
+
+            System.Out.println("Salary:");
+            int emp_salary=sc.nextInt();
+            sc.nextLine();
+
+            System.out.print("Address ");
+            String address = s.nextLine();
+     
+            teachers[i] = new Teacher(emp_Id, emp_name, emp_salary, address, department, subject);
+        }
+
+        
+        System.out.println("Enter the employee number to be searched:");
+        int no=s.nextInt();
+        boolean found=false;
+        for(Teacher teacher:teachers){
+if(teacher.emp_id==no)
+found=true;
+teacher.display();
+break;
+        }
+}
+if(!found){
+System.out.println(" Employee not found");
+}
+
+        sc.close();
+s.close();
+    }
+}
+
