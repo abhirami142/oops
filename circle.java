@@ -1,6 +1,6 @@
 package graphics;
 class circle implements figure{
-public double r
+public double r;
 public circle(double r)
 {
 this.r=r;
