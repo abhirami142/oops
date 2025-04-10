@@ -1,6 +1,6 @@
 package graphics;
  class  rectangle implements figure{
-public int l,b
+public int l,b;
 public rectangle(int l,int b){
 this.l=l;
 this.b=b;
