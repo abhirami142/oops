@@ -1,0 +1,86 @@
+package arithmetic;
+
+public class Addition {
+    public double add(double a, double b) {
+        return a + b;
+    }
+}
+
+File: arithmetic/Subtraction.java
+
+package arithmetic;
+
+public class Subtraction {
+    public double subtract(double a, double b) {
+        return a - b;
+    }
+}
+
+File: arithmetic/Multiplication.java
+
+package arithmetic;
+
+public class Multiplication {
+    public double multiply(double a, double b) {
+        return a * b;
+    }
+}
+
+File: arithmetic/Division.java
+
+package arithmetic;
+
+public class Division {
+    public double divide(double a, double b) {
+        if (b == 0) {
+            throw new ArithmeticException("Division by zero is not allowed.");
+        }
+        return a / b;
+    }
+}
+
+
+---
+
+Step 2: Create the test program
+
+File: TestArithmetic.java
+
+import arithmetic.Addition;
+import arithmetic.Subtraction;
+import arithmetic.Multiplication;
+import arithmetic.Division;
+
+import java.util.Scanner;
+
+public class TestArithmetic {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter second number: ");
+        double num2 = scanner.nextDouble();
+
+        Addition add = new Addition();
+        Subtraction sub = new Subtraction();
+        Multiplication mul = new Multiplication();
+        Division div = new Division();
+
+        System.out.println("Addition: " + add.add(num1, num2));
+        System.out.println("Subtraction: " + sub.subtract(num1, num2));
+        System.out.println("Multiplication: " + mul.multiply(num1, num2));
+        try {
+            System.out.println("Division: " + div.divide(num1, num2));
+        } catch (ArithmeticException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+        scanner.close();
+    }
+}
+
+
+---
+
