@@ -30,7 +30,7 @@ public class test
 	int h=sc.nextInt();
 	System.out.print("Enter the breadth of the triangle:");
 	int b=sc.nextInt();
-	rectangle tri = new rectangle(b,h);
+	triangle tri = new triangle(b,h);
 	System.out.println("Area of triangle: " + tri.area());
 	System.out.println("\n");
 	}
