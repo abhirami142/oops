@@ -2,15 +2,22 @@
 
 import java.util.Scanner;
 
-// User-defined exception class
-class AuthenticationException extends Exception {
-    public AuthenticationException(String message) {
-        super(message);
+class UsernameException extends Exception {
+     UsernameException(String s) {
+        super(s);
+    }
+}
+class PasswordException extends Exception{
+    PasswordException(String s){
+        super(s);
     }
 }
 
-public class UserAuthentication {
-    // Hardcoded correct credentials
+
+
+class UserAuthentication {
+    public static void main(String args[]){
+        
     private static final String VALID_USERNAME = "admin";
     private static final String VALID_PASSWORD = "password123";
 
